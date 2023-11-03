@@ -3,22 +3,22 @@ import random
 class arreglo():
     __arreglo=[]
     __tamaño=0
-    __maxnum=0
-    __sub=[]
+    __numeromaximo=0
+    __arreglocontador=[]
     def __init__(self,tamaño,max):
         self.__tamaño=tamaño
-        self.__maxnum=max
+        self.__numeromaximo=max
         self.__arreglo=np.empty(self.__tamaño,dtype=int)
-        self.__sub=np.empty(self.__maxnum,dtype=int)
+        self.__arreglocontador=np.empty(self.__numeromaximo,dtype=int)
     
     
     def cargar(self):
         i=0
         while i<self.__tamaño:
-            self.__arreglo[i]=random.randint(1,self.__maxnum)
+            self.__arreglo[i]=random.randint(1,self.__numeromaximo)
             i+=1
         j=0
-        while j<self.__maxnum:
+        while j<self.__numeromaximo:
             self.__sub[j]=0
             j+=1
     def mostrar(self):
@@ -41,24 +41,24 @@ class arreglo():
     def contador(self):
         i=0
         maximo=self.maximo()
-        while i<len(self.__sub):
-            if self.__sub[i]==maximo:
+        while i<len(self.__arreglocontador):
+            if self.__arreglocontador[i]==maximo:
                 print(f"El numero {i+1} se repite {maximo} veces")
             i+=1
         
 
     def mostrarsub(self):
         i=0
-        while i<self.__maxnum:
-            print(self.__sub[i])
+        while i<self.__numeromaximo:
+            print(self.__arreglocontador[i])
             i+=1
 
     def maximo(self):
         i=0
         nummax=0
-        while i<len(self.__sub):
-            if self.__sub[i]>nummax:
-                nummax=self.__sub[i]
+        while i<len(self.__arreglocontador):
+            if self.__arreglocontador[i]>nummax:
+                nummax=self.__arreglocontador[i]
             i+=1
         return(nummax)
 if __name__=="__main__":
