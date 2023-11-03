@@ -5,9 +5,9 @@ class arreglo():
     __tamaño=0
     __numeromaximo=0
     __arreglocontador=[]
-    def __init__(self,tamaño,max):
+    def __init__(self,tamaño,maximo):
         self.__tamaño=tamaño
-        self.__numeromaximo=max
+        self.__numeromaximo=maximo
         self.__arreglo=np.empty(self.__tamaño,dtype=int)
         self.__arreglocontador=np.empty(self.__numeromaximo,dtype=int)
     
@@ -19,7 +19,7 @@ class arreglo():
             i+=1
         j=0
         while j<self.__numeromaximo:
-            self.__sub[j]=0
+            self.__arreglocontador[j]=0
             j+=1
     def mostrar(self):
         i=0
@@ -36,7 +36,7 @@ class arreglo():
 
 
     def aumenta(self,numero):
-        self.__sub[numero-1]+=1
+        self.__arreglocontador[numero-1]+=1
 
     def contador(self):
         i=0
@@ -62,6 +62,6 @@ class arreglo():
             i+=1
         return(nummax)
 if __name__=="__main__":
-    arreglo=arreglo(150,100)
+    arreglo=arreglo(20,5)
     arreglo.cargar()
     arreglo.recorre()
